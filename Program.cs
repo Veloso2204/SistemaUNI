@@ -339,19 +339,32 @@ class Program
         }
     }
 
+    static void ExibirMenuPrincipal()
+    {
+        Console.WriteLine("Selecione uma opção:");
+        Console.WriteLine("1 - Aluno");
+        Console.WriteLine("2 - Professor");
+        Console.WriteLine("3 - Curso");
+        Console.WriteLine("4 - Departamento");
+        Console.WriteLine("5 - Aula");
+        Console.WriteLine("0 - Sair");
+
+        Console.WriteLine("< ------------------------------------ >");
+        Console.WriteLine($" | Número de Alunos: {listaDeAlunos.Count}               |");
+        Console.WriteLine($" | Número de Professores: {listadeProf.Count}          | ");
+        Console.WriteLine($" | Número de Cursos: {listadeCurso.Count}               | ");
+        Console.WriteLine($" | Número de Departamentos: {listaDeDepartamentos.Count}        | ");
+        Console.WriteLine($" | Número de Aulas: {listadeAula.Count}                | ");
+        Console.WriteLine("< ------------------------------------ >");
+    }
+
     static void Main()
     {
         bool continuar = true;
 
         while (continuar)
         {
-            Console.WriteLine("Selecione uma opção:");
-            Console.WriteLine("1 - Aluno");
-            Console.WriteLine("2 - Professor");
-            Console.WriteLine("3 - Curso");
-            Console.WriteLine("4 - Departamento");
-            Console.WriteLine("5 - Aula");
-            Console.WriteLine("0 - Sair");
+            ExibirMenuPrincipal();
 
             int escolha;
             if (!int.TryParse(Console.ReadLine(), out escolha))
